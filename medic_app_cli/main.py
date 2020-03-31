@@ -23,8 +23,3 @@ for unit in table_data:
    i = i + 1
 
 print hospitals
-#print hospitals[2] 
-#print hospitals
-
-#for ident in hospitals:
-   #print(ident, '->', hospitals[ident])
