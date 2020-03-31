@@ -7,7 +7,10 @@ app = Flask(__name__)
 @app.route("/")
 def hello():
    
-   html = urllib2.urlopen("https://www.miemssalert.com/chats/Default.aspx?hdRegion=5&hdtab=Hospitals").read()
+   html = urllib2.urlopen("https://www.miemssalert.com/chats/Default.aspx?hdRegion=5&hdtab=Hospitals").read() 
+   #html = urllib2.urlopen("https://www.miemssalert.com/chats/Default.aspx?hdRegion=3&hdtab=Hospitals").read()
+   #html = urllib2.urlopen("https://www.miemssalert.com/chats/Default.aspx?hdRegion=124&hdtab=Hospitals").read()
+
    soup = BeautifulSoup(html,features="lxml")
    
    table = soup.find("table", {"id": "tblHospitals"})
@@ -24,7 +27,7 @@ def hello():
       for flag in alerts:
          if j < 7:
             hospitals[i].append(flag.string)
-           j = j + 1
+            j = j + 1
          
       
       i = i + 1
